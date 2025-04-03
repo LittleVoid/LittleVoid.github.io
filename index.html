@@ -1,59 +1,52 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mein Portfolio</title>
+    <title>LittleVoid Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: #333;
-            color: white;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        img {
-            width: 150px;
-            border-radius: 50%;
-            margin-top: 10px;
-        }
-        .projects a {
-            display: block;
-            margin: 10px 0;
-            color: #333;
-            text-decoration: none;
-            font-weight: bold;
-        }
+        /* Your custom styles go here */
     </style>
 </head>
-<body>
-    <header>
-        <h1>Mein Portfolio</h1>
+<body class="bg-gray-900 text-white">
+
+    <!-- Load Navigation Bar -->
+    <div id="navbar"></div>
+
+    <!-- JavaScript to Load Navbar -->
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar').innerHTML = data)
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
+    <!-- Hero Section -->
+    <header class="h-screen flex flex-col items-center justify-center text-center mt-16">
+        <img src="images/cat.jpg" alt="LittleVoid" class="w-32 h-32 rounded-full mx-auto">
+        <h1 class="text-4xl mt-4"><span class="fall-bounce">LittleVoid</span></h1>
+        <p class="text-xl mt-2">Game Developer & Designer</p>
     </header>
-    <div class="container">
-        <img src="https://via.placeholder.com/150" alt="Profilbild">
-        <h2>Marius Mörsch</h2>
-        <p>Webentwickler | <a href="designer.html">Designer</a> | Kreativer Kopf</p>
-        <h3>Projekte</h3>
-        <div class="projects">
-            <a href="https://games-academy.itch.io/arrythmic-death" target="_blank" rel="noopener">Projekt 1</a>
-            <a href="https://games-academy.itch.io/aeternox" target="_blank" rel="noopener">Projekt 2</a>
-            <a href="https://games-academy.itch.io/nautilus" target="_blank" rel="noopener">Projekt 3</a>
-            <a href="https://games-academy.itch.io/kyoto-conflict" target="_blank" rel="noopener">Projekt 4</a>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-12 px-6">
+        <h2 class="text-3xl text-center mb-6">My Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-1 gap-6">
+            <div class="project-image h-48 flex items-center justify-center bg-gray-800 text-xl">
+                <a href="project1.html">Project 1</a>
+            </div>
+            <div class="project-image h-48 flex items-center justify-center bg-gray-800 text-xl">
+                <a href="project2.html">Project 2</a>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 px-6 bg-gray-800">
+        <h2 class="text-3xl text-center mb-6">Contact</h2>
+        <p class="text-center max-w-3xl mx-auto">You can reach me via email: <a href="mailto:your-email@example.com" class="text-purple-400">your-email@example.com</a></p>
+    </section>
+
 </body>
 </html>

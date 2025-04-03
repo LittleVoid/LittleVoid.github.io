@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Additional padding to prevent overlap with fixed navbar */
+        body {
+            padding-top: 80px; /* Adjust this value to match the height of your header */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Load Navigation Bar -->
+    <div id="navbar"></div>
+
+    <!-- JavaScript to Load Navbar -->
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar').innerHTML = data)
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
+    <section class="py-12 px-6">
+        <h1 class="text-3xl text-center mb-6">About Me</h1>
+        <p class="text-center max-w-3xl mx-auto">I'm a passionate game developer and designer with experience in creating immersive gaming experiences. I enjoy working with various tools and technologies to bring ideas to life.</p>
+    </section>
+</body>
+</html>
