@@ -1,3 +1,4 @@
+<!-- navbar.html -->
 <head>
 <!-- Only for "Live Server" so it doesnt show an Error -->
 </head>
@@ -19,11 +20,18 @@
     -->
 </body> 
 
+<nav class="bg-gray-800 p-4 flex items-center justify-between text-white">
+  <!-- Left side text -->
+  <div class="text-purple-400 font-bold text-4xl">
+    Marius Mörsch
+  </div>
 
-<!-- navbar.html -->
-<nav class="bg-gray-800 p-4 text-center space-x-6">
+  <!-- Right side buttons -->
+  <div class="space-x-6 pr-40">
     <button onclick="loadPage('index-content.html')" class="hover:text-purple-400">Home</button>
+    <span>|</span>
     <button onclick="loadPage('about-content.html')" class="hover:text-purple-400">About</button>
+    <span>|</span>
     <button onclick="loadPage('contact-content.html')" class="hover:text-purple-400">Contact</button>
-  </nav>
-  
+  </div>
+</nav>
