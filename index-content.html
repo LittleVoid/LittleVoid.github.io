@@ -2,30 +2,30 @@
  <head>
     <!-- Only for "Live Server" so it doesnt show an Error -->
  </head>
-<header class="h-screen flex flex-col items-center justify-center text-center">
-    <img src="images/cat.jpg" alt="LittleVoid" class="w-32 h-32 rounded-full mx-auto">
-    <h1 class="text-4xl mt-4"><span class="fall-bounce">LittleVoid</span></h1>
-    <p class="text-xl mt-2">Game Developer & Designer</p>
-  </header>
-  
-  <section id="projects" class="py-12 px-6">
-    <h2 class="text-3xl text-center mb-6">My Projects</h2>
-    <div class="grid grid-cols-1 md:grid-cols-1 gap-6">
-      <div class="project-image h-48 flex items-center justify-center bg-gray-800 text-xl">
-        <a href="project1.html">Project 1</a>
-      </div>
-      <div class="project-image h-48 flex items-center justify-center bg-gray-800 text-xl">
-        <a href="project2.html">Project 2</a>
-      </div>
-    </div>
-  </section>
-  
-  <section id="contact" class="py-12 px-6 bg-gray-800">
-    <h2 class="text-3xl text-center mb-6">Contact</h2>
-    <p class="text-center max-w-3xl mx-auto">
-      You can reach me via email: 
-      <a href="mailto:your-email@example.com" class="text-purple-400">your-email@example.com</a>
+ <header class="h-screen flex flex-col md:flex-row items-center justify-center gap-8 px-6 text-center md:text-left">
+  <!-- Left: About text -->
+  <div class="max-w-xl">
+    <h1 class="text-5xl font-bold mb-4">Hey, I'm <span class="text-purple-400">Marius Mörsch</span></h1>
+    <p class="text-lg text-gray-300">
+      I'm a game developer & designer with a passion for creativity and storytelling.
     </p>
-  </section>
+  </div>
+
+  <!-- Right: Gear + Profile Picture -->
+  <div class="relative w-[520px] h-[520px] flex items-center justify-center">
+    <!-- Rotating gear -->
+    <img  
+      src="images/gear.png"
+      alt="Gear"
+      class="absolute w-full h-full animate-spin-slow" />
+  
+    <!-- Profile picture -->
+    <img  
+      src="images/cat.jpg"
+      alt="LittleVoid"
+      class="rounded-full border-4 border-gray-900 z-10"
+      style="width: 410px; height: 410px;">
+  </div>
+</header>
   
   
