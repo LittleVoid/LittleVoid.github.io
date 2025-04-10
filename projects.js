@@ -1,25 +1,25 @@
 const projects = [
     {
-        title: "Project_01",
-        videoId: "dQw4w9WgXcQ", // Only YT Video ID
+        title: "Kyoto Conflict",
+        videoId: "jWcOfbf_yOU",
+        description: "This is fun game",
+        tags: ["UnrealEngine", "Blueprints", "Level Design", "Design-Lead"]
+    },
+    {
+        title: "Nautilus",
+        videoId: "esYzfqxRYWY",
+        description: "This is fun game",
+        tags: ["UnrealEngine", "C++/Blueprints", "Teach-Lead"]
+    },
+    {
+        title: "Aeternox",
+        videoId: "oKIoU6DpPcY",
         description: "This is fun game",
         tags: ["Unity", "C#", "Level Design"]
     },
     {
-        title: "Project_02",
-        videoId: "dQw4w9WgXcQ", // Only YT Video ID
-        description: "This is fun game",
-        tags: ["Unity", "C#", "Level Design"]
-    },
-    {
-        title: "Project_03",
-        videoId: "dQw4w9WgXcQ", // Only YT Video ID
-        description: "This is fun game",
-        tags: ["Unity", "C#", "Level Design"]
-    },
-    {
-        title: "Project_04",
-        videoId: "dQw4w9WgXcQ", // Only YT Video ID
+        title: "Arrythmic Death",
+        videoId: "zfc6l5ZfAXo",
         description: "This is fun game",
         tags: ["Unity", "C#", "Level Design"]
     },
