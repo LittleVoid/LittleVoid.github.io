@@ -30,46 +30,44 @@
   
 <!-- Projects Section -->
 <section id="projects" class="py-12 px-6">
-  <h2 class="text-3xl text-center mb-12 font-bold">My Projects</h2>
-
-  <!-- Project Block -->
-  <div class="grid md:grid-cols-2 gap-8 items-center bg-gray-800 p-6 rounded-xl shadow-md mb-10 group hover:shadow-purple-500 shadow-xl">
-    
-    <!-- YouTube Trailer -->
-    <div class="aspect-w-16 aspect-h-9 relative overflow-hidden rounded-lg">
-      <iframe 
-        src="https://www.youtube.com/embed/jWcOfbf_yOU"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        class="w-full h-full transition-transform duration-300 group-hover:scale-105">
-      </iframe>
-    </div>
-
-    <!-- Project Description -->
-    <div class="text-white">
-      <h3 class="text-2xl font-semibold mb-4">Project Title</h3>
-      <p class="text-gray-300 text-lg mb-4">
-        A quick description of the game: gameplay, tech used, fun facts, etc.
-      </p>
-
-      <!-- Tags -->
-      <div class="flex flex-wrap gap-2">
-        <span class="bg-purple-600 px-3 py-1 rounded-full text-sm">Unity</span>
-        <span class="bg-purple-600 px-3 py-1 rounded-full text-sm">C#</span>
-        <span class="bg-purple-600 px-3 py-1 rounded-full text-sm">3D</span>
-      </div>
-
-      <!-- Modal Trigger (optional) -->
-      <button 
-        onclick="openModal('dQw4w9WgXcQ')" 
-        class="mt-4 inline-block px-4 py-2 bg-purple-700 hover:bg-purple-600 text-white rounded-lg transition">
-        Watch Fullscreen
-      </button>
-    </div>
-  </div>
+  <h2 class="text-3xl text-center mb-10">My Projects</h2>
+  <div id="projectList" class="space-y-12"></div>
 </section>
+
+<script src="projects.js"></script>
+<script>
+  const projectList = document.getElementById("projectList");
+
+  projects.forEach(project => {
+    const html = `
+      <div class="flex flex-col md:flex-row bg-gray-800 p-6 rounded-xl shadow-lg">
+        <!-- Left: Video -->
+        <div class="md:w-1/2 mb-4 md:mb-0">
+          <div class="aspect-video w-full">
+            <iframe
+              class="rounded-lg"
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/${project.videoId}"
+              title="${project.title}"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        <!-- Right: Description -->
+        <div class="md:w-1/2 md:pl-6 flex flex-col justify-center">
+          <h3 class="text-2xl font-semibold mb-2">${project.title}</h3>
+          <p class="mb-4">${project.description}</p>
+          <div class="flex flex-wrap gap-2">
+            ${project.tags.map(tag => `<span class="bg-purple-900 text-white px-3 py-1 rounded-full text-sm">${tag}</span>`).join('')}
+          </div>
+        </div>
+      </div>
+    `;
+    projectList.innerHTML += html;
+  });
+</script>
 
 <!-- Modal -->
 <div id="videoModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
