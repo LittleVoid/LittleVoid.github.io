@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
       if (container && window.projects) {
         window.projects.forEach(project => {
           const html = `
-            <div class="flex flex-col md:flex-row bg-gray-800 p-6 rounded-xl shadow-lg">
+            <div class="flex flex-col md:flex-row bg-gray-800 p-6 rounded-xl shadow-xl glow-hover">
               <div class="md:w-1/2 mb-4 md:mb-0">
                 <div class="aspect-video w-full">
                   <iframe
