@@ -1,27 +1,43 @@
 const projects = [
     {
         title: "Kyoto Conflict",
+        genre: "Tactical Shooter",
+        role: "Design Lead",
+        roleDescription: "Led the level design and balancing of combat encounters.",
         videoId: "jWcOfbf_yOU",
-        description: "This is fun game",
-        tags: ["UnrealEngine", "Blueprints", "Level Design", "Design-Lead"]
+        tags: ["Unreal Engine", "Blueprints", "Level Design"],
+        playLink: "https://your-itch-link.com",
+        moreLink: "project-pages/kyoto-conflict.html"
     },
     {
-        title: "Nautilus",
-        videoId: "esYzfqxRYWY",
-        description: "This is fun game",
-        tags: ["UnrealEngine", "C++/Blueprints", "Teach-Lead"]
+        title: "Kyoto Conflict",
+        genre: "Tactical Shooter",
+        role: "Design Lead",
+        roleDescription: "Led the level design and balancing of combat encounters.",
+        videoId: "jWcOfbf_yOU",
+        tags: ["Unreal Engine", "Blueprints", "Level Design"],
+        playLink: "https://your-itch-link.com",
+        moreLink: "project-pages/kyoto-conflict.html"
     },
     {
-        title: "Aeternox",
-        videoId: "oKIoU6DpPcY",
-        description: "This is fun game",
-        tags: ["Unity", "C#", "Level Design"]
+        title: "Kyoto Conflict",
+        genre: "Tactical Shooter",
+        role: "Design Lead",
+        roleDescription: "Led the level design and balancing of combat encounters.",
+        videoId: "jWcOfbf_yOU",
+        tags: ["Unreal Engine", "Blueprints", "Level Design"],
+        playLink: "https://your-itch-link.com",
+        moreLink: "project-pages/kyoto-conflict.html"
     },
     {
-        title: "Arrythmic Death",
-        videoId: "zfc6l5ZfAXo",
-        description: "This is fun game",
-        tags: ["Unity", "C#", "Level Design"]
+        title: "Kyoto Conflict",
+        genre: "Tactical Shooter",
+        role: "Design Lead",
+        roleDescription: "Led the level design and balancing of combat encounters.",
+        videoId: "jWcOfbf_yOU",
+        tags: ["Unreal Engine", "Blueprints", "Level Design"],
+        playLink: "https://your-itch-link.com",
+        moreLink: "project-pages/kyoto-conflict.html"
     },
 ]
 
