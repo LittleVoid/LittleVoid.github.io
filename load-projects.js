@@ -49,8 +49,10 @@ window.addEventListener('DOMContentLoaded', () => {
         ${project.tags.map(tag => {
           const tagIcon = tagIcons[tag];
           const iconHTML = tagIcon 
-            ? `<img src="${tagIcon.icon}" alt="${tagIcon.alt}" class="w-4 h-4 inline-block mr-1 align-text-bottom" />` 
-            : "";
+            ? `<div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+               <img src="${tagIcon.icon}" alt="${tagIcon.alt}" class="w-5 h-5" />
+      </div>`
+      : "";
         
           return `<span class="bg-purple-900 text-white px-3 py-1 rounded-full text-sm flex items-center gap-1">${iconHTML}${tag}</span>`;
         }).join('')}
