@@ -1,11 +1,12 @@
 import { tagIcons } from './tag-icons.js';
 
-window.addEventListener('DOMContentLoaded', () => {
-    const checkProjectsExist = () => {
-      const container = document.getElementById("projectList");
-      if (container && window.projects) {
-        window.projects.forEach(project => {
-          const html = `
+export function loadProjects() {
+  const checkProjectsExist = () => {
+    const container = document.getElementById("projectList");
+    if (container && window.projects) {
+      container.innerHTML = ""; // optional: clear existing content
+      window.projects.forEach(project => {
+        const html = `
 <div class="flex flex-col md:flex-row bg-gray-800 p-6 rounded-xl shadow-xl glow-hover">
 
   <!-- Left: Video -->
@@ -50,9 +51,9 @@ window.addEventListener('DOMContentLoaded', () => {
           const tagIcon = tagIcons[tag];
           const iconHTML = tagIcon 
             ? `<div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
-               <img src="${tagIcon.icon}" alt="${tagIcon.alt}" class="w-5 h-5" />
-      </div>`
-      : "";
+                <img src="${tagIcon.icon}" alt="${tagIcon.alt}" class="w-5 h-5" />
+              </div>`
+            : "";
         
           return `<span class="bg-purple-900 text-white px-3 py-1 rounded-full text-sm flex items-center gap-1">${iconHTML}${tag}</span>`;
         }).join('')}
@@ -80,12 +81,10 @@ window.addEventListener('DOMContentLoaded', () => {
 `;
         container.innerHTML += html;
       });
-      } else {
-        // Retry in case content not loaded yet
-        setTimeout(checkProjectsExist, 200);
-      }
-    };
-  
-    checkProjectsExist();
-  });
-  
+    } else {
+      setTimeout(checkProjectsExist, 200);
+    }
+  };
+
+  checkProjectsExist();
+}

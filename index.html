@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LittleVoid Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script type="module" src="load-projects.js"></script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="bg-gradient-to-b from-purple-900 to-black text-white min-h-screen">
@@ -18,41 +17,66 @@
   <!-- Page content will go here -->
   <main id="content"></main>
 
-  <!-- Load Navbar and Content -->
-  <script>
-    // Load navbar
+  <!-- Projects data -->
+  <script src="projects.js"></script>
+
+  <!-- App Logic -->
+  <script type="module">
+    import { loadProjects } from './load-projects.js';
+
+    // Load the navbar
     fetch('navbar.html')
       .then(res => res.text())
       .then(data => {
         document.getElementById('navbar').innerHTML = data;
       });
-  </script>
 
-<script src="projects.js"></script>
-<script src="load-projects.js"></script>
+    // Load a page dynamically
+    function loadPage(page) {
+      fetch(page)
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('content').innerHTML = html;
+          window.history.pushState({}, "", `?page=${page}`);
 
-<script>
-  function loadPage(page) {
-    fetch(page)
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('content').innerHTML = html;
-        window.history.pushState({}, "", `?page=${page}`);
-      });
-  }
-
-  window.addEventListener("DOMContentLoaded", () => {
-    // Check if a specific page was requested in the URL
-    const params = new URLSearchParams(window.location.search);
-    const page = params.get("page");
-
-    if (page) {
-      loadPage(page);
-    } else {
-      loadPage('index-content.html'); // default
+          // Load projects if on the homepage
+          if (page === 'index-content.html') {
+            loadProjects();
+          }
+        });
     }
-  });
-</script>
+
+    // Handle back/forward browser buttons
+    window.addEventListener("popstate", () => {
+      const params = new URLSearchParams(window.location.search);
+      const page = params.get("page") || 'index-content.html';
+      fetch(page)
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('content').innerHTML = html;
+          if (page === 'index-content.html') {
+            loadProjects();
+          }
+        });
+    });
+
+    // Intercept in-page anchor clicks
+    document.addEventListener('click', function (e) {
+      const target = e.target.closest('a[href^="?page="]');
+      if (target) {
+        e.preventDefault();
+        const page = new URL(target.href, window.location.href).searchParams.get("page");
+        loadPage(page);
+      }
+    });
+
+    // Initial load
+    window.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const page = params.get("page") || 'index-content.html';
+      loadPage(page);
+    });
+  </script>
 
 </body>
 </html>
