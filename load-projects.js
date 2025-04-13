@@ -1,3 +1,5 @@
+import { tagIcons } from './tag-icons.js';
+
 window.addEventListener('DOMContentLoaded', () => {
     const checkProjectsExist = () => {
       const container = document.getElementById("projectList");
@@ -44,9 +46,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
       <!-- Bottom Left: Tags -->
       <div class="flex flex-wrap gap-2">
-        ${project.tags.map(tag => `
-          <span class="bg-purple-900 text-white px-3 py-1 rounded-full text-sm">${tag}</span>
-        `).join('')}
+        ${project.tags.map(tag => {
+          const tagIcon = tagIcons[tag];
+          const iconHTML = tagIcon 
+            ? `<img src="${tagIcon.icon}" alt="${tagIcon.alt}" class="w-4 h-4 inline-block mr-1 align-text-bottom" />` 
+            : "";
+        
+          return `<span class="bg-purple-900 text-white px-3 py-1 rounded-full text-sm flex items-center gap-1">${iconHTML}${tag}</span>`;
+        }).join('')}
       </div>
 
       <!-- Bottom Right: Buttons -->
