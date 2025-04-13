@@ -18,7 +18,8 @@ const projects = [
         videoId: "jWcOfbf_yOU",
         tags: ["Unreal Engine", "Blueprints", "Level Design"],
         playLink: "https://your-itch-link.com",
-        moreLink: "project-pages/kyoto-conflict.html"
+        moreLink: "project-pages/kyoto-conflict.html",
+        topTags: ["Student project", "Finished"]
     },
     {
         title: "Kyoto Conflict",
@@ -28,7 +29,8 @@ const projects = [
         videoId: "jWcOfbf_yOU",
         tags: ["Unreal Engine", "Blueprints", "Level Design"],
         playLink: "https://your-itch-link.com",
-        moreLink: "project-pages/kyoto-conflict.html"
+        moreLink: "project-pages/kyoto-conflict.html",
+        topTags: ["Student project", "Finished"]
     },
     {
         title: "Kyoto Conflict",
@@ -38,7 +40,8 @@ const projects = [
         videoId: "jWcOfbf_yOU",
         tags: ["Unreal Engine", "Blueprints", "Level Design"],
         playLink: "https://your-itch-link.com",
-        moreLink: "project-pages/kyoto-conflict.html"
+        moreLink: "project-pages/kyoto-conflict.html",
+        topTags: ["Student project", "Finished"]
     },
     {
         title: "Kyoto Conflict",
@@ -48,7 +51,8 @@ const projects = [
         videoId: "jWcOfbf_yOU",
         tags: ["Unreal Engine", "Blueprints", "Level Design"],
         playLink: "https://your-itch-link.com",
-        moreLink: "project-pages/kyoto-conflict.html"
+        moreLink: "project-pages/kyoto-conflict.html",
+        topTags: ["Student project", "Finished"]
     },
 ]
 
