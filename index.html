@@ -38,6 +38,7 @@
         .then(html => {
           document.getElementById('content').innerHTML = html;
           window.history.pushState({}, "", `?page=${page}`);
+          highlightActiveLink(page); // highlight correct nav item
 
           // Load projects if on the homepage
           if (page === 'index-content.html') {
@@ -50,6 +51,8 @@
     window.addEventListener("popstate", () => {
       const params = new URLSearchParams(window.location.search);
       const page = params.get("page") || 'index-content.html';
+      loadPage(page);
+      highlightActiveLink(page);
       fetch(page)
         .then(res => res.text())
         .then(html => {
@@ -76,6 +79,18 @@
       const page = params.get("page") || 'index-content.html';
       loadPage(page);
     });
+    
+    function highlightActiveLink(page) {
+      const links = document.querySelectorAll('.nav-btn');
+      links.forEach(link => {
+        const linkPage = new URL(link.href, window.location.href).searchParams.get("page");
+        if (linkPage === page) {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
+      });
+}
   </script>
 
 </body>
