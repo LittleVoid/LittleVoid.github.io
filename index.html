@@ -9,13 +9,13 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="bg-gradient-to-b from-purple-900 to-black text-white min-h-screen">
+<body class="bg-gradient-to-b from-purple-900 to-black text-white min-h-screen flex flex-col">
 
   <!-- Navbar -->
   <div id="navbar"></div>
 
   <!-- Page content will go here -->
-  <main id="content"></main>
+  <main id="content" class="flex-grow"></main>
 
   <!-- Projects data -->
   <script src="projects.js"></script>
@@ -90,8 +90,35 @@
           link.classList.remove("active");
         }
       });
-}
+    }
   </script>
 
+  <footer class="bg-gray-900 text-gray-300 py-8 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      
+      <!-- Left: Name & Copyright -->
+      <div class="text-center md:text-left">
+        <p class="text-lg font-semibold">Marius Mörsch</p>
+        <p class="text-sm text-gray-400">© 2025 All rights reserved.</p>
+        <p class="text-sm text-gray-400">Icons by Icons8.</p>
+      </div>
+
+      <!-- Right: Socials -->
+      <div class="flex space-x-6">
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/marius-m%C3%B6rsch-746601252/" target="_blank" class="hover:text-purple-400 flex items-center gap-1">
+          <img src="images/icons8-linkedin.svg" alt="LinkedIn" class="w-5 h-5">
+          <span>LinkedIn</span>
+        </a>
+
+        <!-- GitHub (optional) -->
+        <a href="https://github.com/YOURUSERNAME" target="_blank" class="hover:text-purple-400 flex items-center gap-1">
+          <img src="images/icons8-github.svg" alt="GitHub" class="w-5 h-5">
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
