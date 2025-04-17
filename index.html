@@ -60,6 +60,7 @@
           document.getElementById('content').innerHTML = html;
           window.history.pushState({}, "", `?page=${page}`);
           highlightActiveLink(page); // highlight correct nav item
+          window.scrollTo(0, 0); // scroll to top
 
           // Load projects if on the homepage
           if (page === 'index-content.html') {
