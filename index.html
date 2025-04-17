@@ -33,12 +33,24 @@
   <script type="module">
     import { loadProjects } from './load-projects.js';
 
-    // Load the navbar
-    fetch('navbar.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('navbar').innerHTML = data;
-      });
+    function initNavbarToggle() {
+    const toggleBtn = document.querySelector("[data-collapse-toggle]");
+    const menu = document.getElementById("mobile-menu");
+
+    toggleBtn?.addEventListener("click", () => {
+      menu?.classList.toggle("hidden");
+    });
+  }
+
+  // When navbar is fetched
+  fetch('navbar.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('navbar').innerHTML = data;
+      initNavbarToggle(); // 👈 run this after injecting HTML
+    });
+
+    
 
     // Load a page dynamically
     function loadPage(page) {

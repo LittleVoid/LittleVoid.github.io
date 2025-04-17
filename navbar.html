@@ -6,22 +6,38 @@
 <body>
 </body> 
 
-<nav class="bg-gray-800 p-4 fixed w-full top-0 left-0 z-50 flex items-center justify-between text-white shadow-lg">
-  <!-- Left side text -->
-  <div>
-    <p class="text-purple-400 font-bold text-4xl">Marius Mörsch</p>
-    <p class="text-2xl">Technical Designer</p>
-  </div>
+<nav class="bg-gray-800 fixed w-full top-0 left-0 z-50">
+  <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between p-4 text-white">
+    
+    <!-- Left Side: Name + Role -->
+    <a href="?page=index-content.html" class="flex flex-col leading-tight">
+      <span class="text-purple-400 font-bold text-2xl sm:text-3xl">Marius Mörsch</span>
+      <span class="text-sm sm:text-lg">Technical Designer</span>
+    </a>
 
-  <!-- Right side buttons -->
-  <div class="text-2xl space-x-6 pr-40 flex items-center">
-    <a href="?page=index-content.html" class="hover:text-purple-400 nav-btn">Home</a>
-    <span>|</span>
-    <a href="?page=about-content.html" class="hover:text-purple-400 nav-btn">About me</a>
-    <span>|</span>
-    <a href="?page=contact-content.html" class="hover:text-purple-400 nav-btn">Contact</a>
+    <!-- Hamburger Menu Button -->
+    <button data-collapse-toggle="mobile-menu" type="button"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-400 rounded-lg md:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600"
+      aria-controls="mobile-menu" aria-expanded="false">
+      <span class="sr-only">Open main menu</span>
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+
+    <!-- Menu Links -->
+    <div class="hidden w-full md:flex md:items-center md:w-auto" id="mobile-menu">
+      <ul class="flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0 font-medium">
+        <li><a href="?page=index-content.html" class="block py-2 px-3 nav-btn hover:text-purple-400">Home</a></li>
+        <li><a href="?page=about-content.html" class="block py-2 px-3 nav-btn hover:text-purple-400">About Me</a></li>
+        <li><a href="?page=contact-content.html" class="block py-2 px-3 nav-btn hover:text-purple-400">Contact</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
+
+
 
   <!-- marging so follow content doesn overlap with Navbar -->
    <div class="mt-20">
