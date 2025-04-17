@@ -34,13 +34,24 @@
     import { loadProjects } from './load-projects.js';
 
     function initNavbarToggle() {
-    const toggleBtn = document.querySelector("[data-collapse-toggle]");
-    const menu = document.getElementById("mobile-menu");
+  const toggleBtn = document.querySelector("[data-collapse-toggle]");
+  const menu = document.getElementById("mobile-menu");
 
-    toggleBtn?.addEventListener("click", () => {
-      menu?.classList.toggle("hidden");
+  // Toggle menu open/close
+  toggleBtn?.addEventListener("click", () => {
+    menu?.classList.toggle("hidden");
+  });
+
+  // Close menu when a nav link is clicked (on mobile)
+  const navLinks = document.querySelectorAll("#mobile-menu a");
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth < 768) {
+        menu?.classList.add("hidden");
+      }
     });
-  }
+  });
+}
 
   // When navbar is fetched
   fetch('navbar.html')
