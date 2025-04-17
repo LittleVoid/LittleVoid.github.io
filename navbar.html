@@ -47,14 +47,23 @@
       menu.classList.toggle("hidden");
     });
 
-    // Hide menu when a link is clicked (only on mobile)
-    document.querySelectorAll("#mobile-menu a").forEach(link => {
-      link.addEventListener("click", () => {
-        if (window.innerWidth < 768) {
-          menu.classList.add("hidden");
-        }
+    // Function to attach event listeners to nav links
+    function attachLinkListeners() {
+      document.querySelectorAll("#mobile-menu a").forEach(link => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth < 768) {
+            menu.classList.add("hidden");
+          }
+        });
       });
-    });
+    }
+
+    // Run initially
+    attachLinkListeners();
+
+    // Re-attach on hash/page param change (SPA-style nav)
+    window.addEventListener("hashchange", attachLinkListeners);
+    window.addEventListener("popstate", attachLinkListeners);
   });
 </script>
 
