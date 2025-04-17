@@ -37,8 +37,27 @@
   </div>
 </nav>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.querySelector("[data-collapse-toggle]");
+    const menu = document.getElementById("mobile-menu");
+
+    // Toggle open/close on burger click
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+
+    // Hide menu when a link is clicked (only on mobile)
+    document.querySelectorAll("#mobile-menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth < 768) {
+          menu.classList.add("hidden");
+        }
+      });
+    });
+  });
+</script>
 
 
   <!-- marging so follow content doesn overlap with Navbar -->
-   <div class="mt-20">
-</div>
+   <div class="mt-20"></div>
