@@ -2,14 +2,14 @@
  <head>
     <script src="https://cdn.tailwindcss.com"></script>
  </head>
- 
+ <body>
  <!-- Hero section-->
- <header class="h-screen flex flex-col md:flex-row items-center justify-center gap-8 px-6 text-center md:text-left">
+<header class="h-screen flex flex-col md:flex-row items-center justify-center gap-8 px-6 text-center md:text-left overflow-hidden">
 
   <!-- Left: About text -->
   <div class="max-w-xl">
-    <h1 class="text-5xl font-bold mb-4">Hey, I'm <span class="text-purple-400">Marius Mörsch</span></h1>
-    <p class="text-2xl text-gray-300">
+    <h1 class="text-4xl sm:text-5xl font-bold mb-4">Hey, I'm <span class="text-purple-400">Marius Mörsch</span></h1>
+    <p class="text-lg sm:text-2xl text-gray-300">
       I'm a passionate Programmer and Game Designer based in Berlin. With a background in both game design and coding, 
       I’m driven to create innovative gaming experiences that captivate players.<br><br>Whether it’s prototyping new ideas or 
       collaborating in a team, I’m always exploring ways to push the boundaries of interactive entertainment.
@@ -17,22 +17,19 @@
   </div>
 
   <!-- Right: Gear + Profile Picture -->
-  <div class="relative w-[520px] h-[520px] flex items-center justify-center">
+  <div class="relative w-[80vw] max-w-[520px] aspect-square flex items-center justify-center overflow-hidden">
     
     <!-- Rotating gear -->
     <img  
       src="images/gear.svg"
       alt="Gear"
-      class="absolute w-full h-full animate-spin-slow"
-      style="width: 550px; height: 550px; object-fit: cover;">
+      class="absolute animate-spin-slow w-full h-full object-cover max-w-[550px] max-h-[550px]">
 
-  
     <!-- Profile picture -->
     <img  
-    src="images/herosection_picture.jpg"
-    alt="LittleVoid"
-    class="relative z-10 rounded-full border-4 border-gray-900"
-    style="width: 440px; height: 440px; object-fit: cover;">
+      src="images/herosection_picture.jpg"
+      alt="LittleVoid"
+      class="relative z-10 rounded-full border-4 border-gray-900 w-[80%] max-w-[440px] object-cover aspect-square">
   </div>
 </header>
   
