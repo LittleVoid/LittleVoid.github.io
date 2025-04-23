@@ -59,14 +59,16 @@
         initNavbarToggle();
       });
 
-      function loadPage(page, project = null) {
+      function loadPage(page, project = null, addToHistory = true) {
   fetch(page)
     .then(res => res.text())
     .then(html => {
       document.getElementById('content').innerHTML = html;
 
-      const url = `?page=${page}${project ? `&project=${project}` : ""}`;
-      window.history.pushState({}, "", url);
+      if (addToHistory) {
+        const url = `?page=${page}${project ? `&project=${project}` : ""}`;
+        window.history.pushState({}, "", url);
+      }
 
       highlightActiveLink(page);
       window.scrollTo(0, 0);
@@ -81,11 +83,12 @@
     });
 }
 
-    window.addEventListener("popstate", () => {
-      const params = new URLSearchParams(window.location.search);
-      const page = params.get("page") || 'index-content.html';
-      loadPage(page);
-    });
+window.addEventListener("popstate", () => {
+  const params = new URLSearchParams(window.location.search);
+  const page = params.get("page") || 'index-content.html';
+  const project = params.get("project"); // 👈 GET THE PROJECT PARAM
+  loadPage(page, project, false); // 👈 PASS IT INTO loadPage()
+});
 
     document.addEventListener('click', function (e) {
       const target = e.target.closest('a[href^="?page="]');
@@ -99,11 +102,12 @@
   }
 });
 
-    window.addEventListener("DOMContentLoaded", () => {
-      const params = new URLSearchParams(window.location.search);
-      const page = params.get("page") || 'index-content.html';
-      loadPage(page);
-    });
+window.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const page = params.get("page") || 'index-content.html';
+  const project = params.get("project");
+  loadPage(page, project, false); // ✅ pass project param
+});
 
     function highlightActiveLink(page) {
       const links = document.querySelectorAll('.nav-btn');
