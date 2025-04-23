@@ -67,20 +67,27 @@ export function loadProjects() {
   </div>
 
   <!-- Bottom Right: Buttons -->
-  <div class="flex gap-4 text-2xl font-bold">
-    <div class="relative group">
-      <span class="block px-10 py-4 bg-purple-700 text-white rounded transition-all duration-300 ease-in-out group-hover:opacity-0 group-hover:scale-95">More</span>
-      <span class="absolute inset-0 flex items-center justify-center px-8 py-2 bg-purple-700 text-white rounded opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:scale-100">
-        Coming soon...
-      </span>
-    </div>
+<div class="flex gap-4 text-2xl font-bold">
+  
+  <!-- More Button (Links to Project Detail Page) -->
+  <a 
+    href="?page=project-detail.html&project=${project.id}" 
+    class="px-10 py-4 bg-purple-700 text-white rounded hover:bg-purple-600 transition-all duration-300 ease-in-out"
+  >
+    More
+  </a>
 
-    ${project.playLink ? `
-      <a href="${project.playLink}" target="_blank" class="px-10 py-4 bg-green-600 text-white rounded hover:bg-green-500 transition">
-        Play
-      </a>
-    ` : ""}
-  </div>
+  <!-- Optional Play Button -->
+  ${project.playLink ? `
+    <a 
+      href="${project.playLink}" 
+      target="_blank" 
+      class="px-10 py-4 bg-green-600 text-white rounded hover:bg-green-500 transition"
+    >
+      Play
+    </a>
+  ` : ""}
+</div>
 
 </div>
   </div>

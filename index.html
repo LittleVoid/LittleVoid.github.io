@@ -4,14 +4,14 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KH6MFN74XP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KH6MFN74XP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KH6MFN74XP');
+  </script>
 
-  gtag('config', 'G-KH6MFN74XP');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LittleVoid Portfolio</title>
@@ -26,93 +26,85 @@
   <!-- Page content -->
   <main id="content" class="flex-grow"></main>
 
-  <!-- Projects data -->
+  <!-- Data Files -->
   <script src="projects.js"></script>
 
   <!-- App Logic -->
   <script type="module">
     import { loadProjects } from './load-projects.js';
+    import { detailedProjects } from './project-data.js';
 
     function initNavbarToggle() {
-  const toggleBtn = document.querySelector("[data-collapse-toggle]");
-  const menu = document.getElementById("mobile-menu");
+      const toggleBtn = document.querySelector("[data-collapse-toggle]");
+      const menu = document.getElementById("mobile-menu");
 
-  // Toggle menu open/close
-  toggleBtn?.addEventListener("click", () => {
-    menu?.classList.toggle("hidden");
-  });
+      toggleBtn?.addEventListener("click", () => {
+        menu?.classList.toggle("hidden");
+      });
 
-  // Close menu when a nav link is clicked (on mobile)
-  const navLinks = document.querySelectorAll("#mobile-menu a");
-  navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      if (window.innerWidth < 768) {
-        menu?.classList.add("hidden");
-      }
-    });
-  });
-}
-
-  // When navbar is fetched
-  fetch('navbar.html')
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById('navbar').innerHTML = data;
-      initNavbarToggle(); // 👈 run this after injecting HTML
-    });
-
-    
-
-    // Load a page dynamically
-    function loadPage(page) {
-      fetch(page)
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('content').innerHTML = html;
-          window.history.pushState({}, "", `?page=${page}`);
-          highlightActiveLink(page); // highlight correct nav item
-          window.scrollTo(0, 0); // scroll to top
-
-          // Load projects if on the homepage
-          if (page === 'index-content.html') {
-            loadProjects();
+      const navLinks = document.querySelectorAll("#mobile-menu a");
+      navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth < 768) {
+            menu?.classList.add("hidden");
           }
         });
+      });
     }
 
-    // Handle back/forward browser buttons
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        initNavbarToggle();
+      });
+
+      function loadPage(page, project = null) {
+  fetch(page)
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('content').innerHTML = html;
+
+      const url = `?page=${page}${project ? `&project=${project}` : ""}`;
+      window.history.pushState({}, "", url);
+
+      highlightActiveLink(page);
+      window.scrollTo(0, 0);
+
+      if (page === 'index-content.html') {
+        loadProjects();
+      }
+
+      if (page === 'project-detail.html') {
+        renderProjectDetail(project);
+      }
+    });
+}
+
     window.addEventListener("popstate", () => {
       const params = new URLSearchParams(window.location.search);
       const page = params.get("page") || 'index-content.html';
       loadPage(page);
-      highlightActiveLink(page);
-      fetch(page)
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('content').innerHTML = html;
-          if (page === 'index-content.html') {
-            loadProjects();
-          }
-        });
     });
 
-    // Intercept in-page anchor clicks
     document.addEventListener('click', function (e) {
       const target = e.target.closest('a[href^="?page="]');
       if (target) {
         e.preventDefault();
-        const page = new URL(target.href, window.location.href).searchParams.get("page");
-        loadPage(page);
-      }
-    });
+        const url = new URL(target.href, window.location.href);
+        const page = url.searchParams.get("page");
+        const project = url.searchParams.get("project");
+        
+        loadPage(page, project);
+  }
+});
 
-    // Initial load
     window.addEventListener("DOMContentLoaded", () => {
       const params = new URLSearchParams(window.location.search);
       const page = params.get("page") || 'index-content.html';
       loadPage(page);
     });
-    
+
     function highlightActiveLink(page) {
       const links = document.querySelectorAll('.nav-btn');
       links.forEach(link => {
@@ -124,28 +116,60 @@
         }
       });
     }
+
+    export function renderProjectDetail(projectId) {
+  const project = detailedProjects[projectId];
+
+  if (!project) {
+    document.body.innerHTML = `<div class="text-center text-white mt-10 text-2xl">Project not found 😢</div>`;
+    return;
+  }
+
+  // Title
+  document.getElementById('project-title').textContent = project.title;
+
+  // Info list
+  const infoList = document.getElementById('project-info');
+  infoList.innerHTML = `
+    <li><strong>Genre:</strong> ${project.info.genre}</li>
+    <li><strong>Engine:</strong> ${project.info.engine}</li>
+    <li><strong>Team Size:</strong> ${project.info.teamSize}</li>
+    <li><strong>Duration:</strong> ${project.info.duration}</li>
+    <li><strong>Role:</strong> ${project.info.role}</li>
+  `;
+
+  // Short description
+  document.getElementById('project-description').textContent = project.shortDescription;
+
+  // Sections (zigzag layout)
+  const sectionsContainer = document.getElementById('project-sections');
+  sectionsContainer.innerHTML = project.sections.map((section, index) => {
+    const reverse = index % 2 !== 0 ? 'md:flex-row-reverse' : '';
+    return `
+      <div class="flex flex-col md:flex-row ${reverse} gap-8 items-center">
+        <div class="md:w-1/2">
+          <h2 class="text-2xl font-bold mb-2 text-purple-300">${section.title}</h2>
+          <p class="text-gray-300 text-base">${section.text}</p>
+        </div>
+        <img src="${section.image}" alt="${section.title}" class="md:w-1/2 rounded-xl shadow-lg" />
+      </div>
+    `;
+  }).join('');
+}
   </script>
 
   <footer class="bg-gray-900 text-gray-300 py-8 px-4">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-      
-      <!-- Left: Name & Copyright -->
       <div class="text-center md:text-left">
         <p class="text-lg font-semibold">Marius Mörsch</p>
         <p class="text-sm text-gray-400">© 2025 All rights reserved.</p>
         <p class="text-sm text-gray-400">Icons by Icons8.</p>
       </div>
-
-      <!-- Right: Socials -->
       <div class="flex space-x-6">
-
-        <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/marius-m%C3%B6rsch-746601252/" target="_blank" class="hover:text-purple-400 flex items-center gap-1">
           <img src="images/icons8-linkedin.svg" alt="LinkedIn" class="w-5 h-5">
           <span>LinkedIn</span>
         </a>
-
-        <!-- GitHub (optional) -->
         <a href="https://github.com/LittleVoid" target="_blank" class="hover:text-purple-400 flex items-center gap-1">
           <img src="images/icons8-github.svg" alt="GitHub" class="w-5 h-5">
           <span>GitHub</span>
