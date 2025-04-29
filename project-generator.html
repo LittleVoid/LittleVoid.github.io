@@ -7,7 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-900 text-white p-8">
-  <h1 class="text-2xl font-bold mb-4">🎮 Project JSON Generator</h1>
+  <h1 class="text-2xl font-bold mb-4">Project Data JSON Generator</h1>
 
   <div class="grid gap-4">
     <input id="projectId" placeholder="Project ID (e.g. 'nautilus')" class="p-2 rounded text-black" />
@@ -19,17 +19,57 @@
     <input id="role" placeholder="Role" class="p-2 rounded text-black" />
     <textarea id="shortDescription" placeholder="Short Description" class="p-2 rounded text-black"></textarea>
 
-    <h2 class="text-xl mt-6">📷 Sections (Zigzag Content)</h2>
-    <textarea id="sections" rows="5" placeholder='Format: [{"title": "...", "text": "...", "image": "..."}, ...]' class="p-2 rounded text-black"></textarea>
+    <h2 class="text-xl mt-6">Sections (Zigzag Content)</h2>
+    
+    <div id="sectionsContainer" class="grid gap-2"></div>
 
-    <button onclick="generateJSON()" class="bg-purple-700 hover:bg-purple-600 text-white px-4 py-2 rounded">Generate</button>
+    <button onclick="addSection()" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded mt-2">
+      ➕ Add Zigzag Section
+    </button>
+    <!-- Generate Button -->
+    <button onclick="generateJSON()" class="bg-purple-700 hover:bg-purple-600 text-white px-4 py-2 rounded mt-4">
+      Generate
+    </button>
+    <button onclick="copyToClipboard()" class="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded">
+      📋 Copy JSON
+    </button>
 
     <pre id="output" class="bg-gray-800 p-4 rounded mt-4 whitespace-pre-wrap"></pre>
   </div>
 
   <script>
+    // Add Section
+    function addSection() {
+      const container = document.getElementById('sectionsContainer');
+
+      const wrapper = document.createElement('div');
+      wrapper.className = "bg-gray-800 p-4 rounded grid gap-2";
+
+      wrapper.innerHTML = `
+        <input placeholder="Section Title" class="p-2 rounded text-black section-title" />
+        <textarea placeholder="Section Text" class="p-2 rounded text-black section-text"></textarea>
+        <input placeholder="Section Image URL" class="p-2 rounded text-black section-image" />
+      `;
+
+      container.appendChild(wrapper);
+    }
+// Generate JSON
     function generateJSON() {
       const id = document.getElementById('projectId').value;
+      const sections = [];
+
+      const sectionTitles = document.querySelectorAll('.section-title');
+      const sectionTexts = document.querySelectorAll('.section-text');
+      const sectionImages = document.querySelectorAll('.section-image');
+
+      for (let i = 0; i < sectionTitles.length; i++) {
+        sections.push({
+          title: sectionTitles[i].value,
+          text: sectionTexts[i].value,
+          image: sectionImages[i].value
+        });
+      }
+
       const data = {
         title: document.getElementById('title').value,
         info: {
@@ -40,11 +80,18 @@
           role: document.getElementById('role').value
         },
         shortDescription: document.getElementById('shortDescription').value,
-        sections: JSON.parse(document.getElementById('sections').value || "[]")
+        sections: sections
       };
 
       const jsonOutput = `"${id}": ${JSON.stringify(data, null, 2)},`;
       document.getElementById('output').textContent = jsonOutput;
+    }
+    // Copy to Clipboard
+    function copyToClipboard() {
+    const output = document.getElementById("output").textContent;
+    navigator.clipboard.writeText(output)
+      .then(() => alert("✅ JSON copied to clipboard!"))
+      .catch(err => alert("❌ Failed to copy: " + err));
     }
   </script>
 </body>
