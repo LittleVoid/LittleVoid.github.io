@@ -23,12 +23,41 @@ export const detailedProjects = {
           image: "images/kyoto2.jpg"
         },
         {
-          title: "Challenges",
-          text: "Balancing the AI difficulty without overwhelming the player was tricky, but we implemented a vision cone system...",
-          image: "images/kyoto3.jpg"
+            title: "Challenges",
+            text: "Balancing the AI difficulty without overwhelming the player was tricky, but we implemented a vision cone system...",
+            image: "images/kyoto3.jpg"
+        },
+        {
+            title: "Challenges",
+            text: "Balancing the AI difficulty without overwhelming the player was tricky, but we implemented a vision cone system...",
+            image: "images/kyoto3.jpg"
         }
       ]
     },
+
+    'nautilus': {
+      "title": "Title aaaaaaaa",
+  "info": {
+    "genre": "Genre aaaaaaaa",
+    "engine": "Engine aaaaa",
+    "teamSize": "Team size 8",
+    "duration": "Duration 89",
+    "role": "Role AAAAAA"
+  },
+  "shortDescription": "Short Descrpiton",
+  "sections": [
+    {
+      "title": "Title 1",
+      "text": "asdkasdk",
+      "image": "asdkadsk"
+    },
+    {
+      "title": "Title 2",
+      "text": "asdk",
+      "image": "asdkas"
+    }
+  ]
+},
   
     // Repeat structure for each project
   }

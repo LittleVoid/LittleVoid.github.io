@@ -135,12 +135,23 @@ window.addEventListener("DOMContentLoaded", () => {
   // Info list
   const infoList = document.getElementById('project-info');
   infoList.innerHTML = `
-    <li><strong>Genre:</strong> ${project.info.genre}</li>
-    <li><strong>Engine:</strong> ${project.info.engine}</li>
-    <li><strong>Team Size:</strong> ${project.info.teamSize}</li>
-    <li><strong>Duration:</strong> ${project.info.duration}</li>
-    <li><strong>Role:</strong> ${project.info.role}</li>
-  `;
+  <div class="grid grid-cols-[120px_1fr] gap-y-1 text-sm text-gray-300">
+    <div class="font-semibold text-purple-300 text-left pr-2">Genre:</div>
+    <div>${project.info.genre}</div>
+    
+    <div class="font-semibold text-purple-300 text-left pr-2">Engine:</div>
+    <div>${project.info.engine}</div>
+    
+    <div class="font-semibold text-purple-300 text-left pr-2">Team Size:</div>
+    <div>${project.info.teamSize}</div>
+    
+    <div class="font-semibold text-purple-300 text-left pr-2">Duration:</div>
+    <div>${project.info.duration}</div>
+    
+    <div class="font-semibold text-purple-300 text-left pr-2">Role:</div>
+    <div>${project.info.role}</div>
+  </div>
+`;
 
   // Short description
   document.getElementById('project-description').textContent = project.shortDescription;
