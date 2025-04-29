@@ -17,6 +17,12 @@
     <input id="teamSize" placeholder="Team Size" class="p-2 rounded text-black" />
     <input id="duration" placeholder="Duration" class="p-2 rounded text-black" />
     <input id="role" placeholder="Role" class="p-2 rounded text-black" />
+    <div class="flex justify-between items-center">
+      <label for="shortDescription" class="font-semibold">Short Description</label>
+      <span id="wordCount" class="text-sm text-gray-300">0 words</span>
+    </div>
+    <textarea id="shortDescription" placeholder="Short Description" class="p-2 rounded text-black"></textarea>
+    
     <textarea id="shortDescription" placeholder="Short Description" class="p-2 rounded text-black"></textarea>
 
     <h2 class="text-xl mt-6">Sections (Zigzag Content)</h2>
@@ -93,6 +99,19 @@
       .then(() => alert("✅ JSON copied to clipboard!"))
       .catch(err => alert("❌ Failed to copy: " + err));
     }
+
+    function updateWordCount() {
+    const text = document.getElementById("shortDescription").value;
+    const words = text.trim().split(/\s+/).filter(word => word.length > 0);
+    document.getElementById("wordCount").textContent = `${words.length} word${words.length !== 1 ? 's' : ''}`;
+  }
+
+  // Attach listener after page load
+  window.addEventListener("DOMContentLoaded", () => {
+    const descBox = document.getElementById("shortDescription");
+    descBox.addEventListener("input", updateWordCount);
+    updateWordCount(); // initialize count
+  });
   </script>
 </body>
 </html>
