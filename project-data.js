@@ -74,7 +74,7 @@ export const detailedProjects = {
     {
       "title": "Movement System",
       "text": " The USP of the Game was the Movement System, only by using 2 Keys, A & D you had to move you Character by finding the perfect rythm, inspirit from games like QWOP.Since it was my first experience with Unreal the first prototype was wonky. But with good feedback, a lot of testing and adding more and more little features to it, like camerashake it got better and better.",
-      "image": "images/projects/arrythmic_death/project_ad_ui.png"
+      "image": "images/projects/arrythmic_death/project_movement.mp4"
     },
     {
       "title": "UI",
