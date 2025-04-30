@@ -23,7 +23,6 @@
     </div>
     <textarea id="shortDescription" placeholder="Short Description" class="p-2 rounded text-black"></textarea>
     
-    <textarea id="shortDescription" placeholder="Short Description" class="p-2 rounded text-black"></textarea>
 
     <h2 class="text-xl mt-6">Sections (Zigzag Content)</h2>
     
@@ -99,7 +98,7 @@
       .then(() => alert("✅ JSON copied to clipboard!"))
       .catch(err => alert("❌ Failed to copy: " + err));
     }
-
+// Word count
     function updateWordCount() {
     const text = document.getElementById("shortDescription").value;
     const words = text.trim().split(/\s+/).filter(word => word.length > 0);
