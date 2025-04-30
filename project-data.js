@@ -72,8 +72,8 @@ export const detailedProjects = {
   "shortDescription": "Arrythmic Death is a post modern survival horror game, where players explore an eerie expanse of corridors and rooms within an old hotel, attempting to escape from an inexhaustable monster relentlessly pursuing them.",
   "sections": [
     {
-      "title": "Movement System",
-      "text": " The USP of the Game was the Movement System, only by using 2 Keys, A & D you had to move you Character by finding the perfect rythm, inspirit from games like QWOP.Since it was my first experience with Unreal the first prototype was wonky. But with good feedback, a lot of testing and adding more and more little features to it, like camerashake it got better and better.",
+      "title": "Movement System: Rhythm as Challenge",
+      "text": "One of the core challenges and innovations in Arrhythmic Death was designing a unique movement system centered around just two keys: A and D. Inspired by games like QWOP, the player moves by tapping these keys in rhythm—a concept that quickly became the defining mechanic of the project.<br><br>Since this was my first experience working in Unreal Engine, the initial prototype was rough, but functional. I approached it with rapid iteration and constant user testing. Feedback loops were essential to improving responsiveness and feel. Small additions, like camera shake and input buffers, added greatly to the sense of physicality and control, and I was able to turn a clunky prototype into a satisfying mechanic that required real skill and attention. Developing this system taught me a lot about Unreal’s scripting environment, input systems, and animation blending, while also showing how a simple mechanical constraint can define a game’s identity.",
       "image": "images/projects/arrythmic_death/project_movement.mp4"
     },
     {
