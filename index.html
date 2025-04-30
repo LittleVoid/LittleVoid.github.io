@@ -135,7 +135,7 @@ window.addEventListener("DOMContentLoaded", () => {
   // Info list
   const infoList = document.getElementById('project-info');
   infoList.innerHTML = `
-  <div class="grid grid-cols-[120px_1fr] gap-y-1 text-sm text-gray-300">
+  <div class="grid grid-cols-[120px_minmax(200px,1fr)] gap-y-1 text-sm text-gray-300">
     <div class="font-semibold text-purple-300 text-left pr-2">Genre:</div>
     <div>${project.info.genre}</div>
     
@@ -159,17 +159,27 @@ window.addEventListener("DOMContentLoaded", () => {
   // Sections (zigzag layout)
   const sectionsContainer = document.getElementById('project-sections');
   sectionsContainer.innerHTML = project.sections.map((section, index) => {
-    const reverse = index % 2 !== 0 ? 'md:flex-row-reverse' : '';
-    return `
-      <div class="flex flex-col md:flex-row ${reverse} gap-8 items-center">
-        <div class="md:w-1/2">
-          <h2 class="text-2xl font-bold mb-2 text-purple-300">${section.title}</h2>
-          <p class="text-gray-300 text-base">${section.text}</p>
-        </div>
-        <img src="${section.image}" alt="${section.title}" class="md:w-1/2 rounded-xl shadow-lg" />
+  const isReversed = index % 2 !== 0;
+
+  return `
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 items-start">
+      <!-- Title: always on top -->
+      <div class="md:col-span-2 mb-4">
+        <h2 class="text-2xl md:text-3xl font-bold text-purple-300">${section.title}</h2>
       </div>
-    `;
-  }).join('');
+
+      <!-- Text -->
+      <div class="${isReversed ? 'md:order-2' : 'md:order-1'} text-gray-300">
+        <p>${section.text}</p>
+      </div>
+
+      <!-- Image -->
+      <div class="${isReversed ? 'md:order-1' : 'md:order-2'}">
+        <img src="${section.image}" alt="${section.title}" class="rounded-xl shadow-lg w-full" />
+      </div>
+    </div>
+  `;
+}).join('');
 }
   </script>
 
