@@ -58,6 +58,36 @@ export const detailedProjects = {
     }
   ]
 },
+
+// Arrythmic Death
+"arrythmic-death": {
+  "title": "Arrythmic Death",
+  "info": {
+    "genre": "Survial Horror",
+    "engine": "Unreal Engine 5.1.1",
+    "teamSize": "8",
+    "duration": "8 weeks",
+    "role": "Teach-Lead"
+  },
+  "shortDescription": "Arrythmic Death is a post modern survival horror game, where players explore an eerie expanse of corridors and rooms within an old hotel, attempting to escape from an inexhaustable monster relentlessly pursuing them.",
+  "sections": [
+    {
+      "title": "Movement System",
+      "text": " The USP of the Game was the Movement System, only by using 2 Keys, A & D you had to move you Character by finding the perfect rythm, inspirit from games like QWOP.Since it was my first experience with Unreal the first prototype was wonky. But with good feedback, a lot of testing and adding more and more little features to it, like camerashake it got better and better.",
+      "image": "images/projects/arrythmic_death/project_ad_ui.png"
+    },
+    {
+      "title": "UI",
+      "text": "WasLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio",
+      "image": "images/projects/arrythmic_death/project_ad_ui.png"
+    },
+    {
+      "title": "Working with XYZ",
+      "text": "WasLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio",
+      "image": "images/projects/arrythmic_death/project_ad_ui.png"
+    }
+  ]
+},
   
     // Repeat structure for each project
   }
