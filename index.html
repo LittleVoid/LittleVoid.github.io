@@ -166,12 +166,29 @@ window.addEventListener("DOMContentLoaded", () => {
   sectionsContainer.innerHTML = project.sections.map((section, index) => {
     const isReversed = index % 2 !== 0;
 
-    const mediaElement = isVideo(section.image)
-      ? `<video autoplay loop muted playsinline class="rounded-xl shadow-lg w-full">
-           <source src="${section.image}" type="video/mp4">
-           Your browser does not support the video tag.
-         </video>`
-      : `<img src="${section.image}" alt="${section.title}" class="rounded-xl shadow-lg w-full" />`;
+    const isVideoType = isVideo(section.image);
+
+const mediaElement = isVideoType
+  ? `<video id="section-video" autoplay loop muted playsinline class="rounded-xl shadow-lg w-full cursor-pointer">
+       <source src="${section.image}" type="video/mp4">
+       Your browser does not support the video tag.
+     </video>`
+  : `<img src="${section.image}" alt="${section.title}" class="rounded-xl shadow-lg w-full" />`;
+  
+  if (isVideoType) {
+    setTimeout(() => {
+      const video = document.getElementById("section-video");
+      if (video) {
+        video.addEventListener("click", () => {
+          if (video.paused) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+      }
+    }, 0);
+  }
 
     return `
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 items-start">
