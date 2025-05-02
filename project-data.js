@@ -67,7 +67,7 @@ export const detailedProjects = {
     "engine": "Unreal Engine 5.1.1",
     "teamSize": "8",
     "duration": "8 weeks",
-    "role": "Teach-Lead"
+    "role": "Teach Lead"
   },
   "shortDescription": "Arrythmic Death is a post modern survival horror game, where players explore an eerie expanse of corridors and rooms within an old hotel, attempting to escape from an inexhaustable monster relentlessly pursuing them.",
   "sections": [
@@ -84,6 +84,41 @@ export const detailedProjects = {
     {
       "title": "UI Implementation",
       "text": "I was responsible for integrating all core UI elements into the game. This included the main HUD, puzzle interfaces, and visual feedback for the movement system. Using Unreal’s UMG system, I ensured that the UI complemented the game’s unique rhythm-based mechanics without overwhelming the player.<br><br>Each screen was designed with clarity in mind—supporting both gameplay function and aesthetic coherence. I also handled animations, event bindings, and conditional displays based on game state, ensuring the UI always responded to player actions in a satisfying way.",
+      "image": "images/projects/arrythmic_death/project_ad_ui.png"
+    }
+  ]
+},
+
+// Aeternox
+"aeternox": {
+  "title": "Aeternox",
+  "info": {
+    "genre": "Action RPG",
+    "engine": "Unreal Engine 5.3",
+    "teamSize": "16",
+    "duration": "8 weeks",
+    "role": "Co-Teach Lead"
+  },
+  "shortDescription": "In Aeternox, you will embark on a journey to restore balance between two worlds, created by the twin gods Lysandra of Light and Obskurion of Darkness. Through Obskurion's evil influence, it now lies in your hands to repell the armies of darkness. To achieve this feat, you will learn to wield a mysterious sword, enchanted by even more mysterious powers. Throughout your journey you will become more powerful and ultimately discover an ancient plot surrounding you and the entire world, that has been set in motion nearly a millenia ago.",
+  "sections": [
+    {
+      "title": "Quest System",
+      "text": "For Aeternox, I developed a flexible and expandable quest system using Unreal Engine's Data Tables. Designers could easily create various types of quests—including Kill, Collect, Interact, or Find Location—without needing to touch code. I also implemented quest stages and dependencies, allowing quests to unlock based on player progress (e.g., completing Quest A enables Quest B).<br><br>The system featured a fully functional quest log, which displayed relevant quest information like objectives, giver, and dialogue. A tracker kept the active quest visible and updated in real-time, enhancing clarity and immersion for the player. This system enabled scalable content creation and narrative branching, making it a cornerstone of the game’s design.",     
+      "image": "images/projects/arrythmic_death/project_movement.mp4"
+    },
+    {
+      "title": "Dialogue System",
+      "text": "Using Unreal’s Behavior Trees, I built a reactive dialogue system that adapted based on completed quests and previous interactions. Dialogue choices and branches were dynamic, allowing the game world to feel responsive to player decisions.<br><br>We added voice recordings—recorded by the team during a dedicated audio session—integrated directly into the system to enhance immersion and bring characters to life.",
+      "image": "images/projects/arrythmic_death/project_ad_elevator.png"
+    },
+    {
+      "title": "Interaction & Cutscenes",
+      "text": "I developed the general interaction system for objects in the world, as well as custom triggers that initiated cutscenes based on player actions. These were especially important for the mysterious statues scattered across the game world, which served as major narrative milestones.",
+      "image": "images/projects/arrythmic_death/project_ad_ui.png"
+    },
+    {
+      "title": "FMOD & Audio Implementation",
+      "text": "Aeternox used FMOD for audio implementation, and I handled the setup and integration of sounds and events across the project. Working with FMOD allowed for precise control over spatial audio, layering, and real-time parameter changes. It streamlined the process and gave us flexibility for sound design without heavy engine-side scripting.",
       "image": "images/projects/arrythmic_death/project_ad_ui.png"
     }
   ]
