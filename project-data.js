@@ -74,7 +74,7 @@ export const detailedProjects = {
     {
       "title": "Movement System",
       "text": "One of the core challenges and innovations in Arrhythmic Death was designing a unique movement system centered around just two keys: A and D. Inspired by games like QWOP, the player moves by tapping these keys in rhythm—a concept that quickly became the defining mechanic of the project.<br><br>Since this was my first experience working in Unreal Engine, the initial prototype was rough, but functional. I approached it with rapid iteration and constant user testing. Feedback loops were essential to improving responsiveness and feel. Small additions, like camera shake and input buffers, added greatly to the sense of physicality and control, and I was able to turn a clunky prototype into a satisfying mechanic that required real skill and attention.<br><br> Developing this system taught me a lot about Unreal’s scripting environment, input systems, and animation blending, while also showing how a simple mechanical constraint can define a game’s identity.",
-      "image": "images/projects/arrythmic_death/project_movement.mp4"
+      "image": "images/projects/arrythmic_death/project_ad_movement.mp4"
     },
     {
       "title": "Elevator/Puzzle Mechanic",
@@ -104,23 +104,18 @@ export const detailedProjects = {
     {
       "title": "Quest System",
       "text": "For Aeternox, I developed a flexible and expandable quest system using Unreal Engine's Data Tables. Designers could easily create various types of quests—including Kill, Collect, Interact, or Find Location—without needing to touch code. I also implemented quest stages and dependencies, allowing quests to unlock based on player progress (e.g., completing Quest A enables Quest B).<br><br>The system featured a fully functional quest log, which displayed relevant quest information like objectives, giver, and dialogue. A tracker kept the active quest visible and updated in real-time, enhancing clarity and immersion for the player. This system enabled scalable content creation and narrative branching, making it a cornerstone of the game’s design.",     
-      "image": "images/projects/arrythmic_death/project_movement.mp4"
+      "image": "images/projects/aeternox/project_aeternox_questDT.png"
     },
     {
       "title": "Dialogue System",
       "text": "Using Unreal’s Behavior Trees, I built a reactive dialogue system that adapted based on completed quests and previous interactions. Dialogue choices and branches were dynamic, allowing the game world to feel responsive to player decisions.<br><br>We added voice recordings—recorded by the team during a dedicated audio session—integrated directly into the system to enhance immersion and bring characters to life.",
-      "image": "images/projects/arrythmic_death/project_ad_elevator.png"
+      "image": "images/projects/aeternox/project_aeternox_dialogBT.png"
     },
     {
       "title": "Interaction & Cutscenes",
       "text": "I developed the general interaction system for objects in the world, as well as custom triggers that initiated cutscenes based on player actions. These were especially important for the mysterious statues scattered across the game world, which served as major narrative milestones.",
-      "image": "images/projects/arrythmic_death/project_ad_ui.png"
+      "image": "images/projects/aeternox/project_aeternox_interaction.mp4"
     },
-    {
-      "title": "FMOD & Audio Implementation",
-      "text": "Aeternox used FMOD for audio implementation, and I handled the setup and integration of sounds and events across the project. Working with FMOD allowed for precise control over spatial audio, layering, and real-time parameter changes. It streamlined the process and gave us flexibility for sound design without heavy engine-side scripting.",
-      "image": "images/projects/arrythmic_death/project_ad_ui.png"
-    }
   ]
 },
 }
