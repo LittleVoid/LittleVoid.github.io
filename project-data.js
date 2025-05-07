@@ -1,65 +1,73 @@
 // project-data.js
 
 export const detailedProjects = {
-    'kyoto-conflict': {
+
+  // Project: Kyoto Conflict
+    "kyoto-conflict": {
       title: "Kyoto Conflict",
       info: {
         genre: "Tactical Shooter",
         engine: "Unreal Engine",
-        teamSize: "6 people",
-        duration: "10 weeks",
+        teamSize: "13 people",
+        duration: "8 weeks",
         role: "Design Lead"
       },
       shortDescription: "A tactical shooter set in futuristic Kyoto where players must navigate hostile environments using stealth and smart combat decisions.",
       sections: [
         {
-          title: "Design Process",
-          text: "We started with a mood board, then defined mechanics inspired by stealth-action classics...",
-          image: "images/kyoto1.jpg"
-        },
-        {
           title: "Level Design",
-          text: "I designed a vertical multi-path map to encourage exploration and replayability...",
-          image: "images/kyoto2.jpg"
+          text: "For Kyoto Conflict, we aimed for a traditional three-lane map layout—a classic structure known from competitive multiplayer shooters. However, our goal was to implement player guidance in a subtle way, ensuring that players were naturally directed through the environment without overt markers.<br><br>I started the level design process with 2D sketches, which were then translated into graybox blockouts in Unreal Engine. From there, I iteratively refined the layout and flow using the provided art assets, while making sure each route offered distinct strategic value for both teams. Key areas of focus included maintaining sightlines, balancing risk and reward across paths, and encouraging movement variety without overwhelming the player.",
+          image: "images/projects/kyoto_conflict/project_kc_leveldesign.png"
         },
         {
-            title: "Challenges",
-            text: "Balancing the AI difficulty without overwhelming the player was tricky, but we implemented a vision cone system...",
-            image: "images/kyoto3.jpg"
+          title: "Playtesting",
+          text: "Since Kyoto Conflict was an online multiplayer shooter, extensive playtesting was crucial. Unlike single-player projects, we had to plan test sessions involving multiple players, which required time management and precise coordination.<br><br>Every change—whether in map layout or gameplay logic—had to be tested repeatedly to ensure no new bugs or imbalances were introduced. I worked closely with Taiga and the QA team to manage a structured, document-based bug tracking system. Each report was written clearly and directed to the appropriate department, ensuring fast iteration and fixes.",
+          image: "images/projects/kyoto_conflict/project_kc_playtest.png"
         },
         {
-            title: "Challenges",
-            text: "Balancing the AI difficulty without overwhelming the player was tricky, but we implemented a vision cone system...",
-            image: "images/kyoto3.jpg"
-        }
+            title: "Cross-Discipline Collaboration",
+            text: "As Design Lead, one of my core responsibilities was communication across departments. Coordinating with programmers, artists, and audio designers meant being in frequent meetings, answering questions, and helping others understand how their work connected to the overall game design.<br><br>Balancing this communication load with my own tasks was a constant challenge, so I focused on efficient time management and clear documentation to support smooth collaboration. Acting as a bridge between departments gave me a stronger understanding of team dynamics and the value of unified creative direction.",
+          image: "images/projects/kyoto_conflict/project_kc_crossdisc.png"
+        },
+        {
+          title: "Documentation",
+          text: "Strong documentation was key to the success of Kyoto Conflict. Together with the Producer deparment I ensured that all systems, mechanics, level layouts, and gameplay rules were well-documented and accessible to the entire team.<br><br>Good documentation could not only help new team members to be onboard quickly but also served as a reliable reference point during decision-making or feature changes. For the design department, I maintained clear breakdowns of level structure, gameplay flow, and iteration goals.<br><br<Having consistent, up-to-date documentation meant fewer misunderstandings across departments and allowed us to maintain a shared vision—even as the project evolved. It also made internal reviews and feedback sessions more productive and focused. ",
+          image: "images/projects/kyoto_conflict/project_kc_documentation.png"
+      },
       ]
     },
 
-    'nautilus': {
-      "title": "Title aaaaaaaa",
+// Project: Nautilus
+"nautilus": {
+  "title": "Nautilus",
   "info": {
-    "genre": "Genre aaaaaaaa",
-    "engine": "Engine aaaaa",
-    "teamSize": "Team size 8",
-    "duration": "Duration 89",
-    "role": "Role AAAAAA"
+    "genre": "Action RPG",
+    "engine": "Unreal Engine 5.3",
+    "teamSize": "11",
+    "duration": "8 weeks",
+    "role": "Teach Lead"
   },
-  "shortDescription": "Short Descrpiton",
+  "shortDescription": "In this 3D Action Adventure you play as a resilient human captured by a Great Old One, striving to escape a city filled with monstrous entities and enigmatic dungeon. Armed with a versatile harpoon and magical bracelet, you’ll navigate the intricate dungeon, find keys to unlock new paths and engage in fast-paced combat against terrifying sea creatures.",
   "sections": [
     {
-      "title": "Title 1",
-      "text": "asdkasdk",
-      "image": "asdkadsk"
+      "title": "Enemy AI",
+      "text": "Using Unreal Engine’s Behavior Trees, I developed three distinct enemy types: standard melee, elite melee, and ranged. Each type featured unique behavior patterns, movement styles, and combat reactions. Enemies could dynamically react to player presence through visual detection, sound cues (like footsteps or attacks), and damage taken. For example, ranged enemies maintained distance and sought cover, while elites could enter aggressive states with increased pursuit behavior.<br><br>Balancing complexity with performance was a key challenge—ensuring that AI felt intelligent and reactive without overwhelming the system. Through iteration and testing, we created engaging encounters that required players to adapt their strategies.",
+      "image": "images/projects/nautilus/project_nautilus_enemyAI.png"
     },
     {
-      "title": "Title 2",
-      "text": "asdk",
-      "image": "asdkas"
-    }
+      "title": "Technical Lead: Structuring a Strong Development Pipeline",
+      "text": "As my final project during the programming semester, I stepped into the role of Tech Lead again. I structured the technical development process and collaborated closely with the rest of the programming team to establish priorities, workflows, and clear documentation.<br><br>By drawing on everything I had learned, I was able to help teammates overcome technical roadblocks and ensure our core systems integrated smoothly. It was a valuable experience in leadership, mentorship, and cross-discipline collaboration.",
+      "image": "images/projects/nautilus/project_nautilus_teachlead.png"
+    },
+    {
+      "title": "Sound Implementation",
+      "text": "Nautilus used FMOD for audio implementation, and I handled the setup and integration of sounds and events across the project. Working with FMOD allowed for precise control over spatial audio, layering, and real-time parameter changes. It streamlined the process and gave us flexibility for sound design without heavy engine-side scripting.     ",
+      "image": "images/projects/nautilus/project_nautilus_fmod.png"
+    },
   ]
 },
 
-// Arrythmic Death
+// Project: Arrythmic Death
 "arrythmic-death": {
   "title": "Arrythmic Death",
   "info": {
@@ -89,7 +97,7 @@ export const detailedProjects = {
   ]
 },
 
-// Aeternox
+// Project: Aeternox
 "aeternox": {
   "title": "Aeternox",
   "info": {
