@@ -14,7 +14,7 @@ export const detailedProjects = {
         duration: "8 weeks",
         role: "Design Lead"
       },
-      shortDescription: "A tactical shooter set in futuristic Kyoto where players must navigate hostile environments using stealth and smart combat decisions.",
+      shortDescription: "In this online-only first-person shooter, you'll be thrust into a world where tradition is challenged by futuristic technology in a brutal fight for dominance.At the center of this conflict lies the coveted artifact—a helmet of immense power, capable of turning the tide of battle and securing victory for its possessors.",
       sections: [
         {
           title: "Level Design",
@@ -64,7 +64,7 @@ export const detailedProjects = {
     },
     {
       "title": "Sound Implementation",
-      "text": "Nautilus used FMOD for audio implementation, and I handled the setup and integration of sounds and events across the project. Working with FMOD allowed for precise control over spatial audio, layering, and real-time parameter changes. It streamlined the process and gave us flexibility for sound design without heavy engine-side scripting.     ",
+      "text": "Nautilus used FMOD for audio implementation, and I handled the setup and integration of sounds and events across the project. Working with FMOD allowed for precise control over spatial audio, layering, and real-time parameter changes. It streamlined the process and gave us flexibility for sound design without heavy engine-side scripting.<br><br>It also was a nice experience to work closely together with the sound designers, as I was able to help them with the implementation of their sounds and events. I also learned a lot about the FMOD workflow and how to use it effectively in Unreal Engine.",
       "image": "images/projects/nautilus/project_nautilus_fmod.png"
     },
   ]
@@ -85,7 +85,7 @@ export const detailedProjects = {
   "sections": [
     {
       "title": "Movement System",
-      "text": "One of the core challenges and innovations in Arrhythmic Death was designing a unique movement system centered around just two keys: A and D. Inspired by games like QWOP, the player moves by tapping these keys in rhythm—a concept that quickly became the defining mechanic of the project.<br><br>Since this was my first experience working in Unreal Engine, the initial prototype was rough, but functional. I approached it with rapid iteration and constant user testing. Feedback loops were essential to improving responsiveness and feel. Small additions, like camera shake and input buffers, added greatly to the sense of physicality and control, and I was able to turn a clunky prototype into a satisfying mechanic that required real skill and attention.<br><br> Developing this system taught me a lot about Unreal’s scripting environment, input systems, and animation blending, while also showing how a simple mechanical constraint can define a game’s identity.",
+      "text": "One of the core challenges and innovations in Arrhythmic Death was designing a unique movement system centered around just two keys: A and D. Inspired by games like QWOP, the player moves by tapping these keys in rhythm—a concept that quickly became the defining mechanic of the project.<br><br>Since this was my first experience working in Unreal Engine, the initial prototype was rough, but functional. I approached it with rapid iteration and constant user testing. Feedback loops were essential to improving responsiveness and feel. Small additions, like camera shake and input buffers, added greatly to the sense of physicality and control, and I was able to turn a clunky prototype into a satisfying mechanic that required real skill and attention.<br><br> Developing this system taught me a lot about Unreal’s scripting environment, and input systems, while also showing how a simple mechanical constraint can define a game’s identity.",
       "image": "images/projects/arrythmic_death/project_ad_movement.mp4"
     },
     {
@@ -112,7 +112,7 @@ export const detailedProjects = {
     "duration": "8 weeks",
     "role": "Co-Teach Lead"
   },
-  "shortDescription": "In Aeternox, you will embark on a journey to restore balance between two worlds, created by the twin gods Lysandra of Light and Obskurion of Darkness. Through Obskurion's evil influence, it now lies in your hands to repell the armies of darkness. To achieve this feat, you will learn to wield a mysterious sword, enchanted by even more mysterious powers. Throughout your journey you will become more powerful and ultimately discover an ancient plot surrounding you and the entire world, that has been set in motion nearly a millenia ago.",
+  "shortDescription": "The main goal of Spectral Production was the development of a 3D Action RPG in Unreal Engine 5.3 with the use of the latest technologies available. Tessellation and displacements made with Nanite were supposed to be used to make the environment look even more stunning, however, as these technologies would not work the way they were supposed to, the team switched to vertex painting with hide blending to achieve a wonderful atmosphere. Whereas level streaming helps keeping the performance in check, the foilage used in the levels are painted with Nanite enabled to further boost performance, while achieving a visual pleasing result. Niagara is used as a base for all VFX.",
   "sections": [
     {
       "title": "Quest System",
