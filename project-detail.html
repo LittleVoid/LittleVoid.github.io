@@ -1,20 +1,24 @@
-<!-- project-detail.html -->
-
+""<!DOCTYPE html>
+<html lang="en">
 <head>
-    <!-- Only for "Live Server" so it doesnt show an Error -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Detail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body">
-    <!-- project-detail.html -->
+<body class="bg-gradient-to-b from-purple-900 to-black text-white min-h-screen flex flex-col">
     <div class="container mx-auto px-4 py-12 text-white space-y-12">
-        <h1 id="project-title" class="text-6xl font-bold text-purple-400"></h1>
-      
+        <!-- Project Title as Image -->
+        <img id="project-title" class="w-full max-w-md mx-auto rounded-lg " alt="Project Title Image">
+
         <div class="intro-section flex flex-col md:flex-row gap-10">
-          <ul id="project-info" class="space-y-2 text-lg font-medium"></ul>
-          <p id="project-description" class="text-gray-300 text-lg"></p>
+            <ul id="project-info" class="space-y-2 text-lg font-medium"></ul>
+            <p id="project-description" class="text-gray-300 text-1xl"></p>
         </div>
-      
+
         <div id="project-sections" class="space-y-16"></div>
-      </div>
-  
+    </div>
 </body>
 </html>
+""
+

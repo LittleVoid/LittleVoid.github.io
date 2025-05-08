@@ -5,6 +5,8 @@ export const detailedProjects = {
   // Project: Kyoto Conflict
     "kyoto-conflict": {
       title: "Kyoto Conflict",
+      image: "images/projects/kyoto_conflict/project_kyoto_logo.png",
+
       info: {
         genre: "Tactical Shooter",
         engine: "Unreal Engine",
@@ -40,6 +42,7 @@ export const detailedProjects = {
 // Project: Nautilus
 "nautilus": {
   "title": "Nautilus",
+  "image": "images/projects/nautilus/project_nautilus_logo.png",
   "info": {
     "genre": "Action RPG",
     "engine": "Unreal Engine 5.3",
@@ -70,6 +73,7 @@ export const detailedProjects = {
 // Project: Arrythmic Death
 "arrythmic-death": {
   "title": "Arrythmic Death",
+  "image": "images/projects/arrythmic_death/project_ad_logo.png",
   "info": {
     "genre": "Survial Horror",
     "engine": "Unreal Engine 5.1.1",
@@ -100,6 +104,7 @@ export const detailedProjects = {
 // Project: Aeternox
 "aeternox": {
   "title": "Aeternox",
+  "image": "images/projects/aeternox/project_aeternox_logo.png",
   "info": {
     "genre": "Action RPG",
     "engine": "Unreal Engine 5.3",

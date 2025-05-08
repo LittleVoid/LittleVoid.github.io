@@ -135,7 +135,11 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   // Title
-  document.getElementById('project-title').textContent = project.title;
+  const projectTitleImage = document.getElementById('project-title');
+            projectTitleImage.src = project.image;
+            projectTitleImage.alt = project.title;
+
+  
 
   // Info list
   const infoList = document.getElementById('project-info');
