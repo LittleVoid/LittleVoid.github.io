@@ -86,8 +86,8 @@
 window.addEventListener("popstate", () => {
   const params = new URLSearchParams(window.location.search);
   const page = params.get("page") || 'index-content.html';
-  const project = params.get("project"); // 👈 GET THE PROJECT PARAM
-  loadPage(page, project, false); // 👈 PASS IT INTO loadPage()
+  const project = params.get("project");
+  loadPage(page, project, false);
 });
 
     document.addEventListener('click', function (e) {
@@ -106,7 +106,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const page = params.get("page") || 'index-content.html';
   const project = params.get("project");
-  loadPage(page, project, false); // ✅ pass project param
+  loadPage(page, project, false);
 });
 
     function highlightActiveLink(page) {

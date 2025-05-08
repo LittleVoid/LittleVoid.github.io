@@ -4,7 +4,7 @@ export function loadProjects() {
   const checkProjectsExist = () => {
     const container = document.getElementById("projectList");
     if (container && window.projects) {
-      container.innerHTML = ""; // optional: clear existing content
+      container.innerHTML = "";
       window.projects.forEach(project => {
         const html = `
 <div class="flex flex-col md:flex-row bg-gray-800 p-6 rounded-xl shadow-xl glow-hover">
